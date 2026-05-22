@@ -1,0 +1,41 @@
+%% Modelo de datos (ER) - Nanys Care
+erDiagram
+  TUTOR {
+    int id PK
+    string nombre
+    string correo
+  }
+  CUIDADORA {
+    int id PK
+    string nombre
+    string correo
+    string foto
+    string experiencia
+    string certificaciones
+    decimal tarifa
+  }
+  HIJO {
+    int id PK
+    string nombre
+    date fecha_nacimiento
+    text necesidades
+  }
+  RESERVA {
+    int id PK
+    datetime inicio
+    datetime fin
+    decimal precio
+    string estado
+  }
+  RESEÑA {
+    int id PK
+    int calificacion
+    text comentario
+    datetime fecha
+  }
+
+  TUTOR ||--o{ HIJO : tiene
+  TUTOR ||--o{ RESERVA : solicita
+  CUIDADORA ||--o{ RESERVA : ofrece
+  TUTOR ||--o{ RESEÑA : escribe
+  CUIDADORA ||--o{ RESEÑA : recibe
