@@ -1,0 +1,21 @@
+%% Diagrama de casos de uso - Nanys Care
+%% Mermaid useCase diagram
+usecaseDiagram
+  actor Tutor as T
+  actor Cuidadora as C
+
+  T --> (Registrarse)
+  C --> (Registrarse)
+  T --> (Iniciar sesión)
+  C --> (Iniciar sesión)
+  T --> (Buscar cuidadora)
+  T --> (Ver perfil)
+  T --> (Solicitar reserva)
+  T --> (Pagar servicio)
+  T --> (Calificar cuidadora)
+  C --> (Gestionar disponibilidad)
+  C --> (Aceptar/Rechazar reserva)
+  C --> (Ver agenda)
+
+  (Buscar cuidadora) ..> (Ver perfil) : include
+  (Solicitar reserva) ..> (Pagar servicio) : include
